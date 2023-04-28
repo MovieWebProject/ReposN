@@ -1,9 +1,9 @@
 <?php
     session_start();
-    // if (isset($_SESSION['user'])) {
-    //     header('Location: index.php');
-    //     exit();
-    // }
+    if (isset($_SESSION['user'])) {
+        header('Location: home.php');
+        exit();
+    }
     require_once('db.php');
     $error = '';
 
@@ -39,9 +39,9 @@
             if($result['code']==0){
                 $data = $result['data'];
                 $_SESSION['user'] = $user;
-                $_SESSION['name'] = $data['firstname'].''.$data['lastname'];
-
-                header('Location: home.html');
+                $_SESSION['name'] = $data['firstname'].' '.$data['lastname'];
+                $_SESSION['email'] = $data['email'];
+                header('Location: home.php');
                 exit();
             }else {
                 $error = $result['error'];

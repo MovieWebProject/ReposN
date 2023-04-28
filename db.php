@@ -3,7 +3,14 @@
     use PHPMailer\PHPMailer\PHPMailer;
     use PHPMailer\PHPMailer\SMTP;
     use PHPMailer\PHPMailer\Exception;
-
+    $servername = "localhost";
+    $username = "root";
+    $password = "";
+    $dbname = "movie_web";
+    $conn = mysqli_connect($servername , $username,$password, $dbname);
+    if(!$conn){
+        die("Connect error: ". mysqli_connect_error());
+    }
     //Load Composer's autoloader
     function open_database(){
         $conn = new mysqli('localhost' , 'root','', 'movie_web');
@@ -37,7 +44,7 @@
         else return 
          array('code'=> 0,'error'=> '', 'data'=>$data);
     }
-    
+      
     function is_email_exists($email){
         $sql = 'select username from account where email = ?';
         $conn = open_database();

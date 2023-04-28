@@ -1,5 +1,5 @@
 <?php
-    require_once('db.php') ;
+    require_once('../dbReal.php') ;
 
     function add($userName, $firstName, $lastName, $email, $password)
     {      
@@ -21,7 +21,7 @@
         $connect = openConnection() ;
 
         // Ko có where nên ko cần dùng prepared statement
-        $result = $connect->query('select * from product') ; 
+        $result = $connect->query('') ; 
         
         $products = array() ;
 
@@ -35,7 +35,7 @@
     {
         $connect = openConnection() ;
 
-        $stm = $connect->prepare('delete from product where id = ?') ;
+        $stm = $connect->prepare('') ;
         $stm->bind_param('i', $id) ;
 
         $stm->execute() ;
@@ -47,7 +47,7 @@
     {
         $connect = openConnection() ;
 
-        $stm = $connect->prepare('update product set name = ?, price = ? where id = ?') ;
+        $stm = $connect->prepare('') ;
         $stm->bind_param('sii', $name, $price, $id) ;
 
         $stm->execute() ;
