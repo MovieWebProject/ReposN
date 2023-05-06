@@ -14,7 +14,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Neflix - Watch TV Shows Online, Watch Movies Online</title>
     <!-- TAB ICON LINK -->
-    <link rel="icon" href="assets/images/tab-icon.png">
+    <!-- <link rel="icon" href="assets/images/tab-icon.png"> -->
     <!-- STYLE CSS FILE -->
     <link rel="stylesheet" type="text/css" href="assets/css/style.css">
     <!-- BOOTSTRAP CSS LINK -->
@@ -25,7 +25,7 @@
     <header class="showcase">
         <!-- NAVBAR -->
         <nav class="showcase-top">
-            <img id="logo" src="assets/images/logo.png">
+            <img id="logo" src="assets/images/logo1234.png" style="height: 100px;">
             <button class="submit" type="submit"onclick="window.location.href='login.php'">Sign In</button>
             <select>
                 <option value="/kw/">Tiếng Việt </option>

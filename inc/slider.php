@@ -7,7 +7,7 @@
                 <div class="col-xl-6 col-lg-12 col-md-12">
                 <a href="javascript:void(0)">
                     <div class="channel-logo" data-animation-in="fadeInLeft" data-delay-in="0.5">
-                    <img src="images/logo.png" class="c-logo" alt="" />
+                    <img src="images/logo1234.png" class="c-logo" alt="" />
                     </div>
                 </a>
                 

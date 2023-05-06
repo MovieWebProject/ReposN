@@ -4,7 +4,7 @@
           <div class="col-sm-12 overflow-hidden">
             <div class="iq-main-header d-flex align-items-center justify-content-between">
               <h4 class="main-title">Top Picks For You</h4>
-              <a href="#" class="iq-view-all">View All</a>
+              <a href="view_all.php" class="iq-view-all">View All</a>
             </div>
             <div class="favorite-contens">
             <ul class="favorites-slider list-inline row p-0 mb-0" id="show">

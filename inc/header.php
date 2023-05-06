@@ -14,18 +14,25 @@
             </div>
             </a>
             <a href="home.php" class="navbar-brand">
-            <img src="images/logo.png" class="img-fluid logo" alt="" />
+            <img src="images/logo1234.png" class="img-fluid logo" alt="" />
             </a>
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <div class="menu-main-menu-container">
                 <ul id="top-menu" class="navbar-nav ml-auto">
                 <li class="menu-item"><a href="home.php">Home</a></li>
-                <li class="menu-item"><a href="#">Movies</a></li>
+                <li class="menu-item"><a href="view_all.php">Movies</a></li>
                 <li class="menu-item">
                     <a href="#">Genres</a>
                     <ul class="sub-menu">
-                        
                         <?php 
+                        $servername = "localhost";
+                        $username = "root";
+                        $password = "";
+                        $dbname = "movie_web";
+                        $conn = mysqli_connect($servername , $username,$password, $dbname);
+                        if(!$conn){
+                            die("Connect error: ". mysqli_connect_error());
+                        }
                         $stmt = "SELECT * FROM genres";
                         $res_genres = mysqli_query($conn, $stmt);?>
                         <form action="" method="GET">

@@ -38,7 +38,7 @@
   <main>
   <?php 
         $value = $_GET['watch'];
-        $stmt = $conn->prepare( "SELECT * FROM list_movie WHERE id_movie = ?");
+        $stmt = $conn->prepare( "SELECT * FROM list_series WHERE id_series = ?");
         $stmt->bind_param("s", $value);
 
         $stmt->execute();
@@ -49,20 +49,20 @@
     ?>
   <div class="movie-details" >
     <div class="movie-image" style="margin-top: 100px;">
-        <img src="<?php echo $row['img_movie'];?>" alt="Movie Title" width="600" height="440">
+        <img src="<?php echo $row['img_series'];?>" alt="Movie Title" width="600" height="440">
     </div>
     
     
     
     <div class="movie-info" style="margin-top: 100px;">
         <div class="movie-header">
-            <h1 class="movie-title"><?php echo $row['name_movie'];?></h1>
+            <h1 class="movie-title"><?php echo $row['name_series'];?></h1>
             <p class="age-limit">Age limit: <?php echo $row['age'];?></p>
         </div>
     <p class="movie-genre">Action, Adventure, Comedy</p>
     <p class="movie-description"><?php echo $row['detail'];?></p>
     <p class="movie-description"><strong>Actors:</strong> <?php echo $row['actor'];?></p>
-    <p class="movie-description"><strong>Time:</strong> <?php echo $row['time'];?></p>
+    <p class="movie-description"><strong></strong> <?php echo $row['ep'];?> episode</p>
     <div class="watch-buttons">
     <button class="watch-button" data-mfp-src="https://vie.haiphim.com/share/4ba3a8aaad152d230887da6a26610846">Watch Now</button>
       <button class="trailer-button" data-mfp-src="<?php echo $row['link_trailer'];?>">Watch Trailer</button>
@@ -202,11 +202,11 @@
     $watch = $_GET['watch'];
 
     // Go up view 
-    $stm = $conn->prepare("UPDATE list_movie SET view = view + 1 WHERE id_movie = $watch");
+    $stm = $conn->prepare("UPDATE list_series SET view = view + 1 WHERE id_series = $watch");
     $stm->execute();
 
 
-    $stmt = $conn->prepare("SELECT * FROM comments WHERE id_movie = ?");
+    $stmt = $conn->prepare("SELECT * FROM comments WHERE id_series = ?");
     $stmt->bind_param('s', $watch);
     $stmt->execute();
     $comments = $stmt->get_result();
